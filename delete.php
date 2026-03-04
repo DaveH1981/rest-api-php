@@ -9,8 +9,6 @@ $response = curl_exec($ch);
 
 $status_code = curl_getinfo($ch, CURLINFO_RESPONSE_CODE);
 
-curl_close($ch);
-
 $data = json_decode($response, true);
 
 if ($status_code !== 204) {
@@ -28,5 +26,6 @@ if ($status_code !== 204) {
 <p>Repository deleted successfully.</p>
     <a href="index.php">Index</a>
 </p>
+
 
 <?php require "footer.html" ?>
