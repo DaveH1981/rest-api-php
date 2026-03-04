@@ -8,8 +8,6 @@ curl_setopt($ch, CURLOPT_URL, "https://api.github.com/user/repos$full_name");
 
 $response = curl_exec($ch);
 
-curl_close($ch);
-
 $data = json_decode($response, true);
 
 ?>
@@ -31,5 +29,6 @@ $data = json_decode($response, true);
         <button>Submit</button>
 
     </form>
+
 
 <?php require "footer.html" ?>
