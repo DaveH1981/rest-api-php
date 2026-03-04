@@ -9,8 +9,6 @@ $response = curl_exec($ch);
 
 $status_code = curl_getinfo($ch, CURLINFO_RESPONSE_CODE);
 
-curl_close($ch);
-
 $data = json_decode($response, true);
 
 if ($status_code === 422) {
@@ -35,5 +33,6 @@ if ($status_code !== 201) {
 <p>Repository created successfully.</p>
     <a href="show.php?full_name=<?= $data["full_name"] ?>">Show</a>
 </p>
+
 
 <?php require "footer.html" ?>
